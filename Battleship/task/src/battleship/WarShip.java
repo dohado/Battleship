@@ -1,10 +1,11 @@
 package battleship;
 
+import java.util.Arrays;
+
 public class WarShip {
 
     private final ShipType shipType;
     private final Position position;
-    private boolean sunk = false;
     private final int [][] coordinates;
 
     public WarShip(ShipType shipType, Position position, int[][] coordinates) {
@@ -21,15 +22,8 @@ public class WarShip {
         return position;
     }
 
-    public boolean isSunk() {
-        return sunk;
-    }
-
     public int[][] getCoordinates() {
-        return coordinates;
+        return Arrays.copyOf(coordinates, coordinates.length);
     }
 
-    public void setSunk(boolean sunk) {
-        this.sunk = sunk;
-    }
 }
